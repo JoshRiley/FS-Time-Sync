@@ -21,20 +21,37 @@ namespace FSTimeSync
     {
         private DispatcherTimer timerMain = new DispatcherTimer();
 
-        private Offset<uint> airspeed = new Offset<uint>(0x02BC);
-        private Offset<uint> avionicsMaster = new Offset<uint>(0x2E80);
+        private Offset<uint> localTimeHours = new Offset<uint>(0x0238);
+        private Offset<uint> localTimeMins = new Offset<uint>(0x0239);
+        private Offset<uint> localTimeSecs = new Offset<uint>(0x023A);
+        private Offset<byte> zuluTimeHours = new Offset<byte>(0x23B);
+        private Offset<uint> zuluTimeMins = new Offset<uint>(0x023C);
+        private Offset<int> timeOffset = new Offset<int>(0x0246);
+        private Offset<uint> year = new Offset<uint>(0x0240);
 
         public MainWindow()
         {
             InitializeComponent();
+            getTimeInfo();
             configureForm();
             timerMain.Interval = TimeSpan.FromMilliseconds(50);
             timerMain.Tick += timerMain_Tick;
-            DispatcherTimer LiveTime = new DispatcherTimer();
-            LiveTime.Interval = TimeSpan.FromSeconds(1);
-            LiveTime.Tick += LiveTime_Tick;
-            LiveTime.Start();
+            //DispatcherTimer LiveTime = new DispatcherTimer();
+            //LiveTime.Interval = TimeSpan.FromSeconds(1);
+            //LiveTime.Tick += LiveTime_Tick;
+            //LiveTime.Start();
+
         }
+
+        void getTimeInfo()
+        {
+            DateTime saveNow = DateTime.Now;
+            DateTime saveUtcNow = DateTime.UtcNow;
+
+            Console.WriteLine(saveNow);
+            Console.WriteLine(saveUtcNow);
+        }
+
         void btnToggleConnection_Click(object sender, RoutedEventArgs e)
         {
             if (FSUIPCConnection.IsOpen)
@@ -67,6 +84,12 @@ namespace FSTimeSync
 
                 //double airspeedKnots = (double)this.airspeed.Value / 128d;
                 //this.txtAirspeed.Text = airspeedKnots.ToString("F0");
+
+                double zuluTimeHoursD = (double)this.zuluTimeHours.Value;
+                this.txtZuluTimeHours.Text = zuluTimeHoursD.ToString("F2");
+
+                //double localTimeHoursD = (double)this.localTimeHours.Value;
+                //this.txtLocalTimeHours = localTimeHoursD.ToString();
             }
             catch (Exception ex)
             {
@@ -92,10 +115,10 @@ namespace FSTimeSync
             }
         }
 
-        void LiveTime_Tick(object sender, EventArgs e)
-        {
-            LiveTimeLabel.Content = DateTime.Now.ToString("HH:mm:ss");
-        }
+        //void LiveTime_Tick(object sender, EventArgs e)
+        //{
+        //    LiveTimeLabel.Content = DateTime.Now.ToString("HH:mm:ss");
+        //}
 
         void Window_Closing()
         {

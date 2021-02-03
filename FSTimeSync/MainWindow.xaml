@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FSTimeSync"
         mc:Ignorable="d"
-        Title="MainWindow" Height="180" Width="525"
+        Title="FSTimeSync" Height="180" Width="525"
         FontSize="14"
         >
     <!--<Grid>
@@ -61,11 +61,11 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,1,20,1" VerticalAlignment="Center">Local Time:</TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="1,0,0,0" VerticalAlignment="Center">Test</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,1,20,1" VerticalAlignment="Center">Offset from Z: </TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Margin="1,0,0,0" VerticalAlignment="Center">Test</TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,1,20,1" VerticalAlignment="Center">Time in Z: </TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="1" Margin="1,0,0,0" VerticalAlignment="Center">0000Z</TextBlock>
+            <TextBlock Name="saveNow" Grid.Row="0" Grid.Column="1" Margin="1,0,0,0" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,1,20,1" VerticalAlignment="Center">Sim Z Time:</TextBlock>
+            <TextBlock Name="txtZuluTimeHours" Grid.Row="1" Grid.Column="1" Margin="1,0,0,0" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,1,20,1" VerticalAlignment="Center">Time in Z:</TextBlock>
+            <TextBlock Name="saveUtcNow" Grid.Row="2" Grid.Column="1" Margin="1,0,0,0" VerticalAlignment="Center"></TextBlock>
             <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,1,20,1" VerticalAlignment="Center"></TextBlock>
             <TextBlock Grid.Row="3" Grid.Column="1" Margin="1,0,0,0" VerticalAlignment="Center"></TextBlock>
         </Grid>
