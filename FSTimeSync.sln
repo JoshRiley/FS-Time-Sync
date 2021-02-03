@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSTimeSync", "FSTimeSync\FSTimeSync.csproj", "{32762D76-8C21-427B-AD96-93537C830BE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32762D76-8C21-427B-AD96-93537C830BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32762D76-8C21-427B-AD96-93537C830BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32762D76-8C21-427B-AD96-93537C830BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32762D76-8C21-427B-AD96-93537C830BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7530D72-1BAA-483F-A38F-61872E0CC18F}
+	EndGlobalSection
+EndGlobal
